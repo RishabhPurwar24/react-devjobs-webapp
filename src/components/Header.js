@@ -4,11 +4,13 @@ import Logo from "../assets/desktop/logo.svg";
 const Header = () => {
   return (
     <header>
-      <div class="header-container">
-        <h2>devjobs</h2>
+      <div className="header-container">
+        <div id="heading">
+          <h2>devjobs</h2>
+        </div>
         <div id="toggle">
           <input type="checkbox" id="switch" />
-          <label htmlFor="switch"></label>
+          <label htmlFor="switch" id="toggle-label"></label>
         </div>
       </div>
     </header>

@@ -4,8 +4,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* --background-header: ; */
+  --toogle-button-background: #fff;
+  --search-button-text: #fff;
+  --slider: #5964e0;
+  --main-background: #f4f6f8;
+  --search-form: #fff;
+  --main-text: #19202d;
+  --primary: #5964e0;
+  --checkmark-background: #e7e8e9;
+  --tertiary: #9daec2;
+  --faded-text: #6e8098;
+  --main-text: #19202d;
+  --accent-text: #5964e0;
+}
+
 body {
   font-family: "Kumbh Sans", sans-serif;
+  background-color: #f4f6f8;
 }
 
 header {
@@ -15,53 +32,200 @@ header {
 
 .header-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  height: 100%;
+  margin: 0 40px;
+  padding: 0 40px;
 }
 
-.logo {
-  display: block;
+#heading h2 {
+  font-size: 32px;
+  color: white;
 }
 
-/* TOGGLE BUTTON */
+#toggle {
+  display: flex;
+}
 
-input[type="checkbox"] {
+/*---------- TOGGLE BUTTON --------*/
+
+.header-container input[type="checkbox"] {
   height: 0;
   width: 0;
   visibility: hidden;
 }
 
-label {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 60px;
-  height: 34px;
-  background: grey;
+.header-container label {
   display: block;
-  border-radius: 100px;
+  width: 48px;
+  height: 24px;
+  background: var(--toogle-button-background);
+  cursor: pointer;
+  border-radius: 50px;
   position: relative;
 }
 
 /* CIRCLE */
-
-label:after {
+.header-container label:after {
   content: "";
+  height: 16px;
+  width: 16px;
   position: absolute;
   top: 4px;
   left: 5px;
-  height: 26px;
-  width: 26px;
-  background: #fff;
-  border-radius: 90px;
+  background: var(--slider);
+  border-radius: 13px;
   transition: 0.3s;
 }
 
-input:checked + label {
-  background: #bada55;
+.header-container input:checked + label:after {
+  left: 28px;
+  /* left: calc(100% - 5px); */
+  /* transform: translateX(-100%); */
 }
 
-input:checked + label:after {
-  left: calc(100% - 5px);
-  transform: translateX(-100%);
+.header-container input:checked + label {
+  background: #121721;
 }
-/* TOGGLE BUTTON */
+
+/*--------- TOGGLE BUTTON ----------*/
+
+.main-container {
+  margin: 0 40px;
+  padding: 0 40px;
+}
+
+/* -----------SEARCH BAR------------- */
+.search-bar {
+  display: flex;
+  padding: 10px;
+  height: 80px;
+  background-color: var(--search-form);
+  border-radius: 6px;
+  margin-top: -25px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#search-input-1 {
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+#input-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+#search-input-1 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--main-text);
+  appearance: none;
+  outline: none;
+  border: 1px solid transparent;
+  margin-left: 6px;
+  display: flex;
+  align-items: center;
+}
+
+#search-input-1::after {
+  content: "";
+  width: 1px;
+  height: 80px;
+  opacity: 0.3;
+  background-color: var(--tertiary);
+}
+
+#search-input-2 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--main-text);
+  appearance: none;
+  outline: none;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+}
+
+#search-input-2::after {
+  content: "";
+  width: 1px;
+  height: 80px;
+  opacity: 0.1;
+  background-color: var(--tertiary);
+}
+
+#search-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+#box {
+  height: 20px;
+  width: 20px;
+  background-color: var(--checkmark-background);
+  border-radius: 4px;
+}
+
+#search-checkbox-label {
+  margin-right: 20px;
+  font-size: 1rem;
+  margin-left: 6px;
+}
+
+#search-button {
+  background-color: var(--primary);
+  color: var(--search-button-text);
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* -----------SEARCH BAR------------- */
+
+/* ---------------CARD CONTAINER ------------ */
+/* .grid-card-container{
+will contain all the cards
+} */
+
+.card-container {
+  width: 352px;
+  height: 227px;
+  background-color: var(--search-form);
+  margin-top: 3.75rem;
+  position: relative;
+  padding: 50px 30px 30px 30px;
+}
+
+.card-header {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(234, 147, 16);
+  border-radius: 15px;
+  position: absolute;
+  top: -25px;
+  left: 30px;
+}
+
+.card-body-details {
+  color: var(--faded-text);
+}
+
+.card-body-position {
+  color: var(--main-text);
+  margin: 8px 0;
+}
+
+.job-card-location {
+  margin-top: 40px;
+  color: var(--accent-text);
+}
+
+/* ---------------CARD CONTAINER ------------ */
