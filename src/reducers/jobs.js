@@ -1,4 +1,4 @@
-export default (jobs = [], action) => {
+const jobReducer = (jobs = [], action) => {
   switch (action.type) {
     case "FETCH_ALL":
       return action.payload;
@@ -7,3 +7,5 @@ export default (jobs = [], action) => {
       return jobs;
   }
 };
+
+export default jobReducer;

@@ -2,9 +2,9 @@
 
 import { combineReducers } from "redux";
 
-import jobs from "./jobs";
+import jobReducer from "./jobs";
 // import auth from "./auth";
 
 export const reducers = combineReducers({
-  jobs,
+  jobReducer,
 });

@@ -195,6 +195,11 @@ header {
 will contain all the cards
 } */
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .card-container {
   width: 352px;
   height: 227px;
@@ -207,7 +212,8 @@ will contain all the cards
 .card-header {
   width: 50px;
   height: 50px;
-  background-color: rgb(234, 147, 16);
+  /* background-color: rgb(234, 147, 16);
+  background-image: url(./assets/logos/pod.svg); */
   border-radius: 15px;
   position: absolute;
   top: -25px;
@@ -216,6 +222,15 @@ will contain all the cards
 
 .card-body-details {
   color: var(--faded-text);
+}
+
+.card-body-details-oval {
+  display: inline-block;
+  margin: 0 12px 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--faded-text);
 }
 
 .card-body-position {
