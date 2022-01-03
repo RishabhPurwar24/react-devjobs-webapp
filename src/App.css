@@ -26,7 +26,7 @@ body {
 }
 
 header {
-  background-image: url(./assets/desktop/bg-pattern-header.svg);
+  background-image: url(../public/assets/desktop/bg-pattern-header.svg);
   height: 160px;
 }
 
@@ -98,20 +98,24 @@ header {
 
 /* -----------SEARCH BAR------------- */
 .search-bar {
-  display: flex;
-  padding: 10px;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  /* it centers horizontally and vertically both */
+  place-items: center;
+  /* padding: 0 10px; */
   height: 80px;
   background-color: var(--search-form);
   border-radius: 6px;
   margin-top: -25px;
-  align-items: center;
-  justify-content: space-around;
+  /* align-items: center;
+  justify-content: space-around; */
 }
 
-#search-input-1 {
+/* #search-input-1 {
   margin-right: 5px;
   margin-left: 10px;
-}
+} */
 
 #input-icon svg {
   width: 24px;
@@ -159,9 +163,15 @@ header {
   background-color: var(--tertiary);
 }
 
+#checkbox-label {
+  display: flex;
+  align-items: center;
+}
+
 #search-checkbox {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 #box {
@@ -197,12 +207,13 @@ will contain all the cards
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 33.33%);
+  column-gap: 20px;
 }
 
 .card-container {
-  width: 352px;
-  height: 227px;
+  /* width: 352px;
+  height: 227px; */
   background-color: var(--search-form);
   margin-top: 3.75rem;
   position: relative;
@@ -244,3 +255,15 @@ will contain all the cards
 }
 
 /* ---------------CARD CONTAINER ------------ */
+
+@media (max-width: 780px) {
+  .cards {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: repeat(1, 100%);
+  }
+}

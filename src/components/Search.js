@@ -36,10 +36,12 @@ const Search = () => {
         />
       </div>
       <div id="search-checkbox">
-        <input type="checkbox" id="box" />
-        <label htmlFor="box" id="search-checkbox-label">
-          Full Time
-        </label>
+        <div id="checkbox-label">
+          <input type="checkbox" id="box" />
+          <label htmlFor="box" id="search-checkbox-label">
+            Full Time
+          </label>
+        </div>
         <button id="search-button">Search</button>
       </div>
     </form>

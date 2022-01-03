@@ -1,8 +1,9 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const Card = ({ card }) => {
   return (
-    <div className="card-container">
+    <Link className="card-container">
       <div
         className="card-header"
         style={{
@@ -25,7 +26,7 @@ const Card = ({ card }) => {
       <div className="card-footer">
         <h4 className="job-card-location">{card.location}</h4>
       </div>
-    </div>
+    </Link>
   );
 };
 
